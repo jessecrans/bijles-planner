@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSignOut } from 'react-firebase-hooks/auth'
-import { auth } from '../firebase'
+import { auth } from '../../Firebase/firebase'
 
 const SignOut = () => {
   const [signOut, loading, error] = useSignOut(auth);

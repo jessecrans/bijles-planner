@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAuthState, useSendPasswordResetEmail } from 'react-firebase-hooks/auth'
-import { auth } from '../firebase'
+import { auth } from '../../Firebase/firebase'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useUpdateProfile, useAuthState, useSendEmailVerification, useSignOut, useDeleteUser } from 'react-firebase-hooks/auth';
-import { auth } from '../firebase';
+import { auth } from '../../Firebase/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Username from './Username';
@@ -61,14 +61,14 @@ const Profile = () => {
             }
             <hr className='w-full my-2' />
             <button
-              className='p-2 rounded bg-sky-500 hover:bg-sky-400 text-white'
+              className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-fit'
               onClick={handleSignOut}
             >
               Sign Out
             </button>
             <hr className='w-full my-2' />
             <button
-              className='p-2 rounded bg-red-500 hover:bg-red-400 text-white'
+              className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded w-fit'
               onClick={handleDelete}
             >
               Delete Account

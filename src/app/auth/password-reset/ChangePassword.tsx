@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { auth } from '../firebase';
+import { auth } from '../../Firebase/firebase';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 
 const ChangePassword = () => {

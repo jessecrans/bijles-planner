@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { auth } from '../firebase';
+import { auth } from '../../Firebase/firebase';
 
 const UsernamePassword = () => {
   const [email, setEmail] = useState('');

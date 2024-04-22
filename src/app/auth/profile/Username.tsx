@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthState, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { auth } from '../firebase';
+import { auth } from '../../Firebase/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { useUser } from '../Contexts/UserContext';
+import { useUser } from '../../Contexts/UserContext';
 
 const Username = () => {
   const [user, loading, userError] = useAuthState(auth);

@@ -1,8 +1,7 @@
 "use client";
 import { GoogleAuthProvider, signInWithPopup, getAuth, signOut, User } from "firebase/auth";
-import { auth } from "./firebase";
+import { auth } from "./Firebase/firebase";
 import { useState } from "react";
-import SignIn from "./signin/SignIn";
 
 export default function Home() {
   return (
@@ -10,7 +9,7 @@ export default function Home() {
       <h1
         className="text-4xl font-light text-center uppercase"
       >
-        User Authentication Template
+        Bijles Planner
       </h1>
     </main>
   )

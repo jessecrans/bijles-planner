@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons/faGoogle';
-import { auth } from '../firebase';
+import { auth } from '../../Firebase/firebase';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 const GoogleSignIn = () => {

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../firebase';
+import { auth } from '../Firebase/firebase';
 import { useUser } from '../Contexts/UserContext';
 
 const Navbar = () => {
@@ -18,10 +18,16 @@ const Navbar = () => {
   return (
     <nav className='p-4 mb-2 border-2'>
       <ul className='flex justify-between gap-4 items-center'>
-        <div>
+        <div className='flex gap-4 items-center'>
           <li className='hover:text-gray-500 text-xl'>
             <Link href='/'>
               <FontAwesomeIcon icon={faHome} />
+            </Link>
+          </li>
+
+          <li className='hover:text-gray-500'>
+            <Link href='/tables'>
+              Time Tables
             </Link>
           </li>
         </div>
@@ -40,7 +46,7 @@ const Navbar = () => {
             ) : user ? (
               <>
                 <li className='hover:text-gray-500'>
-                  <Link href='/profile'>
+                  <Link href='/auth/profile'>
                     <FontAwesomeIcon icon={faUser} className='mx-2' />
                     <p className='inline'>
                       {displayName.length > 20 ? `${displayName.slice(0, 20)}...` : displayName}
@@ -51,12 +57,12 @@ const Navbar = () => {
             ) : (
               <>
                 <li className='hover:text-gray-500'>
-                  <Link href='/signin'>
+                  <Link href='/auth/signin'>
                     SignIn
                   </Link>
                 </li>
                 <li className='hover:text-gray-500'>
-                  <Link href='/signup'>
+                  <Link href='/auth/signup'>
                     SignUp
                   </Link>
                 </li>

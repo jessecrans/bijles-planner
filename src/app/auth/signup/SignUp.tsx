@@ -1,15 +1,15 @@
 "use client";
-import React, { useState } from 'react';
-import GoogleSignIn from './GoogleSignIn';
-import { auth } from '../firebase';
-import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
-import SignOut from './SignOut';
+import React from 'react';
+import SignOut from '../signin/SignOut';
+import GoogleSignIn from '../signin/GoogleSignIn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../Firebase/firebase';
 import UsernamePassword from './UsernamePassword';
 import Link from 'next/link';
 
-const SignIn = () => {
+const SignUp = () => {
   const [user, loading, error] = useAuthState(auth);
 
   return (
@@ -24,19 +24,13 @@ const SignIn = () => {
           </>
         ) : (
           <div className='flex flex-col justify-between items-center gap-2'>
-            <h2>Sign In</h2>
+            <h2>Sign Up</h2>
             <UsernamePassword />
             <Link
-              href='/signup'
+              href='/signin'
               className='text-blue-500 hover:text-blue-400 underline'
             >
-              If you don't have an account, sign up here.
-            </Link>
-            <Link
-              href='/password-reset'
-              className='text-blue-500 hover:text-blue-400 underline'
-            >
-              Forgot your password?
+              If you already have an account, sign in here.
             </Link>
             <hr className='w-full' />
             <GoogleSignIn />
@@ -56,4 +50,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default SignUp
